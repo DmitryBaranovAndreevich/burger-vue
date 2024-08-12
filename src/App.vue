@@ -1,31 +1,25 @@
 <template>
   <div class="body">
-    <AppHeader />
+    <Main />
   </div>
 </template>
 
 <script>
-import AppHeader from "@/components/AppHeader";
+import Main from "@/pages/Main";
 export default {
   components: {
-    AppHeader,
-  },
-  data() {
-    return {
-      likes: 15,
-    };
-  },
-  methods: {
-    addLike() {
-      this.likes += 1;
-    },
+    Main,
   },
 };
 </script>
 
 <style>
-.body {
+.body,
+body {
   background: #131316;
   height: 100vh;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
 }
 </style>

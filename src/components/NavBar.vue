@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="linkItem" v-for="link in links" :key="link.id">
-      <nav-bar-item v-bind:title="link.title"><component :is="link.icon" /></nav-bar-item>
+      <nav-bar-item :title="link.title"><component :is="link.icon" /></nav-bar-item>
     </div>
   </div>
 </template>
