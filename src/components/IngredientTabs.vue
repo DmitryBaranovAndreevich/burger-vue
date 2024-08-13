@@ -11,9 +11,11 @@
       </div>
     </div>
     <div class="optionsWrapper dataWrapper">
-      <div v-for="ingredient in options[activeTab].data" :key="ingredient">
-        <burger-ingredients :element="ingredient" />
-      </div>
+      <burger-ingredients
+        v-for="ingredient in options[activeTab].data"
+        :element="ingredient"
+        :key="ingredient"
+      />
     </div>
   </div>
 </template>
@@ -86,6 +88,7 @@ export default {
 .label {
   display: block;
   text-align: center;
+  padding: 10px 0;
 }
 
 .ingredientWrapper {

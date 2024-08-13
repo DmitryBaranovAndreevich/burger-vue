@@ -5,11 +5,11 @@
       <div class="column">
         <h1 class="title">Соберите бургер</h1>
         <ingredient-tabs :options="ingredients">
-          <BurgerIngredients />
+          <burger-ingredients />
         </ingredient-tabs>
       </div>
       <div class="column">
-        <h1>Соберите бургер</h1>
+        <burger-constructor />
       </div>
     </div>
   </div>
@@ -18,6 +18,7 @@
 <script>
 import AppHeader from "@/components/AppHeader";
 import BurgerIngredients from "@/components/BurgerIngredients";
+import BurgerConstructor from "@/components/BurgerConstructor";
 import IngredientTabs from "@/components/IngredientTabs";
 import Bun1 from "@/images/buns/Bun1";
 import Bun2 from "@/images/buns/Bun2";
@@ -28,6 +29,7 @@ import Souse4 from "@/images/souses/Souse4";
 export default {
   components: {
     AppHeader,
+    BurgerConstructor,
     IngredientTabs,
     BurgerIngredients,
   },
@@ -83,7 +85,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .wrapper {
   display: flex;
   justify-content: center;
