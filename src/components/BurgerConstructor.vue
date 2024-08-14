@@ -1,8 +1,15 @@
 <template>
   <div class="root">
+    <burger-constructor-item title="test" price="20" type="up" />
     <div class="constructor">
-      <BurgerConstructorItem title="test" price="20" :img="bun1" />
+      <burger-constructor-item
+        title="test"
+        price="20"
+        v-for="index in arr"
+        :key="index"
+      />
     </div>
+    <burger-constructor-item title="test" price="20" type="bottom" />
     <div class="footer">
       <div class="price">610<coin /></div>
       <app-button>Оформить заказ</app-button>
@@ -13,13 +20,16 @@
 import AppButton from "@/components/UI/AppButton";
 import BurgerConstructorItem from "@/components/BurgerConstructorItem";
 import Coin from "@/images/Coin";
-import Bun1 from "@/images/buns/Bun2";
 export default {
   components: {
     AppButton,
     BurgerConstructorItem,
     Coin,
-    Bun1,
+  },
+  data() {
+    return {
+      arr: new Array(10),
+    };
   },
 };
 </script>
@@ -27,12 +37,26 @@ export default {
 .root {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  padding: 80px 0;
+  gap: 20px;
 }
 
 .constructor {
-  height: 100px;
+  max-height: 40vh;
   flex: 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: auto;
+}
+
+.constructor::-webkit-scrollbar {
+  width: 8px;
+  background-color: #131316;
+}
+
+.constructor::-webkit-scrollbar-thumb {
+  background-color: #8585ad;
 }
 
 .footer {

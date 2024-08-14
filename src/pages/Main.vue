@@ -89,6 +89,7 @@ export default {
 .wrapper {
   display: flex;
   justify-content: center;
+  gap: 40px;
 }
 
 .column {

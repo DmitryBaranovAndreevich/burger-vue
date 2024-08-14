@@ -1,13 +1,13 @@
 <template>
   <svg
-    width="240"
-    height="120"
-    viewBox="0 0 240 120"
+    :width="width"
+    :height="height"
+    :viewBox="viewBox"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
   >
-    <rect width="240" height="120" fill="url(#pattern0_113878_355)" />
+    <rect :width="width" :height="height" fill="url(#pattern0_113878_355)" />
     <defs>
       <pattern
         id="pattern0_113878_355"
@@ -26,3 +26,22 @@
     </defs>
   </svg>
 </template>
+<script>
+export default {
+  props: {
+    width: {
+      type: Number,
+      default: 90,
+    },
+    height: {
+      type: Number,
+      default: 40,
+    },
+  },
+  computed: {
+    viewBox() {
+      return `0 0 ${this.width} ${this.height}`;
+    },
+  },
+};
+</script>
