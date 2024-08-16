@@ -12,7 +12,7 @@
     </div>
     <div class="optionsWrapper dataWrapper">
       <burger-ingredients
-        v-for="ingredient in options[activeTab].data"
+        v-for="ingredient in options[activeTab]?.data"
         :element="ingredient"
         :key="ingredient"
       />
@@ -37,7 +37,6 @@ export default {
   },
   methods: {
     setTab(id) {
-      console.log(id);
       this.activeTab = id;
     },
   },

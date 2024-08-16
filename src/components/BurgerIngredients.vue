@@ -1,9 +1,9 @@
 <template>
   <div class="ingredientWrapper">
     <span class="counter">10</span>
-    <component :is="element.img" />
+    <img :src="element.image" />
     <p class="price">{{ element.price }}<coin /></p>
-    <p class="title">{{ element.title }}</p>
+    <p class="title">{{ element.name }}</p>
   </div>
 </template>
 

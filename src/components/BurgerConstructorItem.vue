@@ -5,10 +5,10 @@
       class="wrapper"
       :class="{ upComponent: type === 'up', bottomComponent: type === 'bottom' }"
     >
-      <bun1 />
-      <p class="title">{{ title }}</p>
+      <img :src="element.image" />
+      <p class="title">{{ element.name }}</p>
       <div class="priceContainer">
-        <p>{{ price }}</p>
+        <p>{{ element.price }}</p>
         <coin />
       </div>
       <button class="deleteButton">
@@ -21,24 +21,14 @@
 import Coin from "@/images/Coin";
 import ThreeDots from "@/images/ThreeDots";
 import DeleteIcon from "@/images/DeleteIcon";
-import Bun1 from "@/images/buns/Bun1";
 export default {
   components: {
     Coin,
     DeleteIcon,
-    Bun1,
     ThreeDots,
   },
   props: {
-    title: {
-      type: String,
-      required: true,
-    },
-    price: {
-      type: Number,
-      required: true,
-    },
-    img: {
+    element: {
       type: Object,
       required: true,
     },
@@ -106,6 +96,6 @@ export default {
 }
 
 .bottomComponent {
-   border-radius: 40px 40px 88px 88px;
+  border-radius: 40px 40px 88px 88px;
 }
 </style>

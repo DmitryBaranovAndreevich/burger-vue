@@ -1,15 +1,14 @@
 <template>
   <div class="root">
-    <burger-constructor-item title="test" price="20" type="up" />
+    <burger-constructor-item :element="arr[0]" type="up" />
     <div class="constructor">
       <burger-constructor-item
-        title="test"
-        price="20"
-        v-for="index in arr"
-        :key="index"
+        v-for="ingredient in arr"
+        :element="ingredient"
+        :key="ingredient.id"
       />
     </div>
-    <burger-constructor-item title="test" price="20" type="bottom" />
+    <burger-constructor-item :element="arr[0]" type="bottom" />
     <div class="footer">
       <div class="price">610<coin /></div>
       <app-button>Оформить заказ</app-button>
@@ -19,6 +18,7 @@
 <script>
 import AppButton from "@/components/UI/AppButton";
 import BurgerConstructorItem from "@/components/BurgerConstructorItem";
+import { ingredients } from "@/utils/fakeResponse";
 import Coin from "@/images/Coin";
 export default {
   components: {
@@ -28,7 +28,7 @@ export default {
   },
   data() {
     return {
-      arr: new Array(10),
+      arr: ingredients.slice(0, 10),
     };
   },
 };
