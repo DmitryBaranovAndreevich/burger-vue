@@ -1,6 +1,7 @@
 <template>
   <div class="root">
     <app-header />
+    <app-input v-model="input" type="password" />
     <ingredient-detail-modal
       :v-if="ingredients[1]?.data[0]"
       v-model:show="dialogVisible"
@@ -27,6 +28,7 @@ import BurgerConstructor from "@/components/BurgerConstructor";
 import IngredientTabs from "@/components/IngredientTabs";
 import { ingredientsService } from "@/API";
 import IngredientDetailModal from "@/components/IngredientDetailModal";
+import AppInput from "@/components/UI/AppInput";
 export default {
   components: {
     AppHeader,
@@ -34,11 +36,13 @@ export default {
     IngredientTabs,
     BurgerIngredients,
     IngredientDetailModal,
+    AppInput,
   },
   data() {
     return {
       ingredients: [],
       dialogVisible: true,
+      input: "",
     };
   },
   methods: {
