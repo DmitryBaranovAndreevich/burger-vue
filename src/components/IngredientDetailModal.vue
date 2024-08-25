@@ -27,9 +27,6 @@
 </template>
 <script>
 export default {
-  components: {
-    ModalOverlay,
-  },
   data() {
     return {
       dialogVisible: true,

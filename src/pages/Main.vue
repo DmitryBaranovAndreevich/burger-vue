@@ -27,7 +27,6 @@ import BurgerConstructor from "@/components/BurgerConstructor";
 import IngredientTabs from "@/components/IngredientTabs";
 import { ingredientsService } from "@/API";
 import IngredientDetailModal from "@/components/IngredientDetailModal";
-import AppInput from "@/components/UI/AppInput";
 export default {
   components: {
     AppHeader,
@@ -35,7 +34,6 @@ export default {
     IngredientTabs,
     BurgerIngredients,
     IngredientDetailModal,
-    AppInput,
   },
   data() {
     return {

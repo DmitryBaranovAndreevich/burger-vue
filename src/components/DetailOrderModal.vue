@@ -15,7 +15,6 @@
 import Done from "@/images/Done";
 export default {
   components: {
-    ModalOverlay,
     Done,
   },
   data() {

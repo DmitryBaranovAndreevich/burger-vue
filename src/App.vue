@@ -1,16 +1,11 @@
 <template>
   <div class="body">
-    <Register />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Register from "@/pages/Register";
-export default {
-  components: {
-    Register,
-  },
-};
+export default {};
 </script>
 
 <style>
