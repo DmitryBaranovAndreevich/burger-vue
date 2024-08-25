@@ -1,7 +1,6 @@
 <template>
   <div class="root">
     <app-header />
-    <app-input v-model="input" type="password" />
     <ingredient-detail-modal
       :v-if="ingredients[1]?.data[0]"
       v-model:show="dialogVisible"

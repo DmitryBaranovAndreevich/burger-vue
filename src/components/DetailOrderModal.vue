@@ -12,7 +12,6 @@
   </modal-overlay>
 </template>
 <script>
-import ModalOverlay from "@/components/UI/ModalOverlay";
 import Done from "@/images/Done";
 export default {
   components: {

@@ -26,7 +26,6 @@
   </modal-overlay>
 </template>
 <script>
-import ModalOverlay from "@/components/UI/ModalOverlay";
 export default {
   components: {
     ModalOverlay,

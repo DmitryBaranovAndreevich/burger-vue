@@ -15,6 +15,7 @@
 <script>
 import Aye from "@/images/Aye";
 export default {
+  name: "app-input",
   components: {
     Aye,
   },
@@ -39,6 +40,7 @@ export default {
 </script>
 <style scoped>
 .root {
+  width: 100%;
   position: relative;
 }
 

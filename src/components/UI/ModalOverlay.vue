@@ -9,6 +9,7 @@
 <script>
 import CloseIcon from "@/images/CloseIcon";
 export default {
+  name: "modal-overlay",
   components: {
     CloseIcon,
   },

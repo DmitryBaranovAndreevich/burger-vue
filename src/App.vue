@@ -1,14 +1,14 @@
 <template>
   <div class="body">
-    <Main />
+    <Register />
   </div>
 </template>
 
 <script>
-import Main from "@/pages/Main";
+import Register from "@/pages/Register";
 export default {
   components: {
-    Main,
+    Register,
   },
 };
 </script>
