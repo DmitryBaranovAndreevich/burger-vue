@@ -1,9 +1,13 @@
 <template>
-  <register-page-template title="Регистрация" buttonText="Зарегистрироваться">
-    <app-input v-model="input" type="text" placeholder="Имя" />
+  <register-page-template
+    title="Вход"
+    buttonText="Войти"
+    :botomComponent="bottomComponent"
+  >
     <app-input v-model="input" type="email" placeholder="E-mail" />
     <app-input v-model="input" type="password" placeholder="Пароль" />
-    <p class="text">Уже зарегистрированы?<a class="link">Войти</a></p>
+    <p class="text">Вы — новый пользователь?<a class="link">Зарегистрироваться</a></p>
+    <p class="text">Забыли пароль?<a class="link">Восстановить пароль</a></p>
   </register-page-template>
 </template>
 <style>

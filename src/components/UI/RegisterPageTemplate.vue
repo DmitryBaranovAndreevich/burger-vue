@@ -4,6 +4,7 @@
       <p class="title">{{ title }}</p>
       <slot></slot>
       <app-button @click="onClick">{{ buttonText }}</app-button>
+      <component v-if="botomComponent" :is="botomComponent" />
     </div>
   </div>
 </template>
@@ -14,11 +15,11 @@ export default {
     title: {
       type: String,
     },
-    link: {
-      type: String,
-    },
     buttonText: {
       type: String,
+    },
+    botomComponent: {
+      type: Object,
     },
   },
   methods: {

@@ -42,7 +42,7 @@ export default {
 }
 
 .constructor {
-  max-height: 40vh;
+  max-height: 25vh;
   flex: 1 0;
   display: flex;
   flex-direction: column;
