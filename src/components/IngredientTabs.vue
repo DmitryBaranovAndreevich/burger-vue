@@ -22,14 +22,9 @@
 
 <script>
 import BurgerIngredients from "@/components/BurgerIngredients";
+import { mapState } from "vuex";
 export default {
   components: { BurgerIngredients },
-  props: {
-    options: {
-      type: Array,
-      required: true,
-    },
-  },
   data() {
     return {
       activeTab: 0,
@@ -39,6 +34,11 @@ export default {
     setTab(id) {
       this.activeTab = id;
     },
+  },
+  computed: {
+    ...mapState({
+      options: (state) => state.mainPage.ingredients,
+    }),
   },
 };
 </script>

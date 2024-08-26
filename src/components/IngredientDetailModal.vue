@@ -1,5 +1,5 @@
 <template>
-  <modal-overlay v-if="dialogVisible" v-model:show="dialogVisible">
+  <modal-overlay v-if="dialogVisible" @update:show="setDialogVisible">
     <div class="wrapper">
       <p class="title">Детали ингредиента</p>
       <img :src="element?.image" />
@@ -26,12 +26,8 @@
   </modal-overlay>
 </template>
 <script>
+import { mapState, mapMutations } from "vuex";
 export default {
-  data() {
-    return {
-      dialogVisible: true,
-    };
-  },
   props: {
     show: {
       type: Boolean,
@@ -40,6 +36,16 @@ export default {
       type: Object,
       required: true,
     },
+  },
+  methods: {
+    ...mapMutations({
+      setDialogVisible: "mainPage/setDialogVisible",
+    }),
+  },
+  computed: {
+    ...mapState({
+      dialogVisible: (state) => state.mainPage.dialogVisible,
+    }),
   },
 };
 </script>

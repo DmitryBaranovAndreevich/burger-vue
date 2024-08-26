@@ -4,7 +4,7 @@ import { BaseRestService } from "./BaseRestService";
 const INGREDIENTS_API = "ingredients ";
 
 interface IIngredientsRequest {
-  getAllIngredients: () => Promise<Ingredient[]>;
+  getAllIngredients: () => Promise<{data: Ingredient[]}>;
 }
 
 export class IngredientsService
@@ -12,6 +12,6 @@ export class IngredientsService
   implements IIngredientsRequest
 {
   getAllIngredients() {
-    return this.get<Ingredient[]>(`${this.baseUrl}/api/${INGREDIENTS_API}`);
+    return this.get<{data: Ingredient[]}>(`${this.baseUrl}/api/${INGREDIENTS_API}`);
   }
 }

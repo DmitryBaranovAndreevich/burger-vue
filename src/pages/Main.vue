@@ -1,15 +1,10 @@
 <template>
   <div class="root">
     <app-header />
-    <ingredient-detail-modal
-      :v-if="ingredients[1]?.data[0]"
-      v-model:show="dialogVisible"
-      :element="ingredients[1]?.data[0]"
-    />
     <div class="wrapper">
       <div class="column">
         <h1 class="title">Соберите бургер</h1>
-        <ingredient-tabs :options="ingredients">
+        <ingredient-tabs >
           <burger-ingredients />
         </ingredient-tabs>
       </div>
@@ -21,52 +16,24 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import AppHeader from "@/components/AppHeader";
 import BurgerIngredients from "@/components/BurgerIngredients";
 import BurgerConstructor from "@/components/BurgerConstructor";
 import IngredientTabs from "@/components/IngredientTabs";
-import { ingredientsService } from "@/API";
-import IngredientDetailModal from "@/components/IngredientDetailModal";
+// import IngredientDetailModal from "@/components/IngredientDetailModal";
 export default {
   components: {
     AppHeader,
     BurgerConstructor,
     IngredientTabs,
     BurgerIngredients,
-    IngredientDetailModal,
-  },
-  data() {
-    return {
-      ingredients: [],
-      dialogVisible: true,
-      input: "",
-    };
+    // IngredientDetailModal,
   },
   methods: {
-    async fetchIngredients() {
-      try {
-        const response = await ingredientsService.getAllIngredients();
-        this.ingredients = [
-          {
-            id: 0,
-            title: "Булки",
-            data: response.data.filter((el) => el.type === "bun"),
-          },
-          {
-            id: 1,
-            title: "Соусы",
-            data: response.data.filter((el) => el.type === "sauce"),
-          },
-          {
-            id: 2,
-            title: "Начинки",
-            data: response.data.filter((el) => el.type === "main"),
-          },
-        ];
-      } catch (e) {
-        console.log(e);
-      }
-    },
+    ...mapActions({
+      fetchIngredients: "mainPage/fetchIngredients",
+    }),
   },
   mounted() {
     this.fetchIngredients();
