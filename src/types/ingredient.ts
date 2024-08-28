@@ -12,3 +12,5 @@ export interface Ingredient {
   image_large: string;
   __v: number;
 }
+
+export const INGREDIENT_DND = "ingredient"

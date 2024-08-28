@@ -1,5 +1,5 @@
 <template>
-  <div class="ingredientWrapper">
+  <div class="ingredientWrapper" :ref="drag">
     <span class="counter">10</span>
     <img :src="element.image" />
     <p class="price">{{ element.price }}<coin /></p>
@@ -7,8 +7,27 @@
   </div>
 </template>
 
+<script setup>
+import { useDrag } from "vue3-dnd";
+import { INGREDIENT_DND } from "@/types";
+
+// eslint-disable-next-line vue/valid-define-props
+const props = defineProps({
+  element: Object,
+});
+
+const [collect, drag] = useDrag(() => ({
+  type: INGREDIENT_DND,
+  item: { name: props.element.name },
+  collect: (monitor) => ({
+    isDragging: monitor.isDragging(),
+  }),
+}));
+</script>
+
 <script>
 import Coin from "@/images/Coin";
+
 export default {
   components: {
     Coin,

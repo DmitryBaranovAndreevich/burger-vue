@@ -1,11 +1,14 @@
 <template>
-  <div class="body">
-    <router-view></router-view>
-  </div>
+  <DndProvider :backend="HTML5Backend" >
+    <div class="body">
+      <router-view></router-view>
+    </div>
+  </DndProvider>
 </template>
 
-<script>
-export default {};
+<script setup>
+import { DndProvider } from "vue3-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 </script>
 
 <style>
