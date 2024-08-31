@@ -1,5 +1,5 @@
 <template>
-  <div class="ingredientWrapper" :ref="drag">
+  <div class="ingredientWrapper" :ref="drag" role="INGREDIENT_DND">
     <span class="counter">10</span>
     <img :src="element.image" />
     <p class="price">{{ element.price }}<coin /></p>
@@ -16,9 +16,10 @@ const props = defineProps({
   element: Object,
 });
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const [collect, drag] = useDrag(() => ({
   type: INGREDIENT_DND,
-  item: { name: props.element.name },
+  item: props.element,
   collect: (monitor) => ({
     isDragging: monitor.isDragging(),
   }),

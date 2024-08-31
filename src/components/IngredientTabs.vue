@@ -22,7 +22,7 @@
 
 <script>
 import BurgerIngredients from "@/components/BurgerIngredients";
-import { mapState } from "vuex";
+import { mapGetters } from "vuex";
 export default {
   components: { BurgerIngredients },
   data() {
@@ -36,8 +36,8 @@ export default {
     },
   },
   computed: {
-    ...mapState({
-      options: (state) => state.mainPage.ingredients,
+    ...mapGetters({
+      options: "mainPage/getTabs",
     }),
   },
 };
